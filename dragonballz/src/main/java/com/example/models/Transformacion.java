@@ -1,7 +1,10 @@
 package com.example.models;
 
+import java.util.UUID;
+
 public class Transformacion {
 
+    private UUID id;
     private String nombreFase;
     private String colorAura;
     private String colorcabello;
@@ -13,14 +16,16 @@ public class Transformacion {
     private Integer duracionMaximaMinutos;
     private long kiMinimoRequerido;
 
-    
+
     public Transformacion() {
+         this.id = UUID.randomUUID();
     }
 
 
     public Transformacion(String nombreFase, String colorAura, String colorcabello, String alteracionesFisicas,
             boolean desgastaEnergia, boolean requiereFuria, boolean esKiDivino, Double multiplicadorDePoder,
             Integer duracionMaximaMinutos, long kiMinimoRequerido) {
+        this.id = UUID.randomUUID();
         this.nombreFase = nombreFase;
         this.colorAura = colorAura;
         this.colorcabello = colorcabello;
@@ -31,6 +36,16 @@ public class Transformacion {
         this.multiplicadorDePoder = multiplicadorDePoder;
         this.duracionMaximaMinutos = duracionMaximaMinutos;
         this.kiMinimoRequerido = kiMinimoRequerido;
+    }
+
+
+    public UUID getId() {
+        return id;
+    }
+
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
 
@@ -133,6 +148,7 @@ public class Transformacion {
         this.kiMinimoRequerido = kiMinimoRequerido;
     }
 
+    
     
 
 

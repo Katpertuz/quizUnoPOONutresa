@@ -1,7 +1,10 @@
 package com.example.models;
 
+import java.util.UUID;
+
 public class Batalla {
 
+    private UUID id;
     private String nombreRetador;
     private String nombreOponente;
     private String lugarCombate;
@@ -12,13 +15,15 @@ public class Batalla {
     private boolean usoSemillasErmitanio;
     private boolean planetaDestruido;
     private Integer nivelDestruccionEntorno;
-   
+
     public Batalla() {
+        this.id = UUID.randomUUID();
     }
 
     public Batalla(String nombreRetador, String nombreOponente, String lugarCombate, String nombreSaga,
             String nombreGanador, String estadoBatalla, Integer duracionMinutos, boolean usoSemillasErmitanio,
             boolean planetaDestruido, Integer nivelDestruccionEntorno) {
+        this.id = UUID.randomUUID();
         this.nombreRetador = nombreRetador;
         this.nombreOponente = nombreOponente;
         this.lugarCombate = lugarCombate;
@@ -29,6 +34,14 @@ public class Batalla {
         this.usoSemillasErmitanio = usoSemillasErmitanio;
         this.planetaDestruido = planetaDestruido;
         this.nivelDestruccionEntorno = nivelDestruccionEntorno;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNombreRetador() {
@@ -113,7 +126,6 @@ public class Batalla {
 
     
 
-    
 
 
 
